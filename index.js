@@ -6,12 +6,14 @@ let howTo = document.getElementById('instructions')
 
 function foodSearch(){
     let text = document.getElementById('userChoice').value.split(" ").join("-")
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=d88c1672269546ba8bb8c72a0ff5ee7f&query=${text}&maxFat=25&number=5`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=06f48698c5ec48b6ab0083ab6526e794&query=${text}&maxFat=25&number=5`)
     .then(response => response.json())
     .then(data => {
-        name.innerText = data.results[0].title
+        console.log(data)
+        // name.innerText = data.results[0].title
         image.src = data.results[0].image
     })
+    // 06f48698c5ec48b6ab0083ab6526e794
 }
 
 
