@@ -1,9 +1,6 @@
 
 let instructionBtn= document.getElementById("instructionBtn")
-instructionBtn.addEventListener("click", popModal () {
- console.log("test")
-  // add modal bootstrap for instructions to pop up 
-});
+instructionBtn.addEventListener("click", popModal);
 
 
 function popModal(){
@@ -12,7 +9,7 @@ function popModal(){
 /*
 
 function fetchInstructions (){
-  fetch(`https://api.spoonacular.com/recipes/analyzeInstructions`)
+  fetch(`https://api.spoonacular.com/recipes/analyzeInstructions?key=$ca45345d004549cab8f1b35c3ebbf68a`)
   .then(response => response.json())
   .then(data => displayInstructions(data.results))
   }
