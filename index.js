@@ -1,28 +1,28 @@
 
-
-.addEventListener("click", function() {
-  // Code to execute when button is clicked
-  // 
+let instructionBtn= document.getElementById("instructionBtn")
+instructionBtn.addEventListener("click", popModal () {
+ console.log("test")
+  // add modal bootstrap for instructions to pop up 
 });
 
+
+function popModal(){
+    
+}
 /*
+
 function fetchInstructions (){
-  fetch(``)
+  fetch(`https://api.spoonacular.com/recipes/analyzeInstructions`)
   .then(response => response.json())
   .then(data => displayInstructions(data.results))
   }
 
-  function displayInstructions(stories){
-  console.log(stories);
+  function displayInstructions(steps){
 
   }
 }
-
-document.querySelector("#").addEventListener("submit", (e) => {
-  e.preventDefault()
-  const searchTerm = e.target[0].value
-  console.log(`The Search Stories form has been submitted with search term: "${searchTerm}"`)
-  fetchSearchInfo(searchTerm)
+}
+  
 })
 
 
