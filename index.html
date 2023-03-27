@@ -1,6 +1,5 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
-
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>LSA Food Support</title>
@@ -12,32 +11,29 @@
 <header>
     <img src="foodSearch.png" id='logo'></img>
 </header>
-
 <body>
     <div id='mission-Statement'>
         <h3>Welcome!:</h3>
         <p>Look inside the Fridge and See what you can come up with!</p>
-
     </div>
-    <form>
+    <form id='ingrform'>
         <p>add all the ingrediants you have at hand to find the right recipe for you!</p>
-        <input type="text" name="Ingrediants input" />
-        <button type="submit">Submit</button>
+        <input id='ingrediantinput' type="text" name="Ingrediants input" />
+        <input id='ingrediantbutton' type="submit"></input>
     </form>
     <form>
         <p>Search A dish Instead!</p>
-        <input id='userChoice' type="text" name="Dish Name" />
-        <button type="button" id = "foodSearchButton">Search</button>
+        <input  id = "userChoice" id='userinout' type="text" name="Dish Name" />
+        <button type="button" id = "foodSearchButton" class="btn btn-outline-success">Search</button>
     </form>
     <div id='cardsection'>
-        <div class="card" style= "width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card" style="width: 18rem;">
+            <img id='cardimg' src="..." class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 id ="card-title">DishName</h5>
-                <a href="#" class="btn btn-primary">See How to Make</a>
+                <h5 id='card-title' class="card-title">DishName</h5>
+                <a href="#"  id = "instructions" class="btn btn-primary">See How to Make</a>
             </div>
         </div>
     </div>
 </body>
-
 </html>
