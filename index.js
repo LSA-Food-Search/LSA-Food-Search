@@ -13,7 +13,7 @@ function foodSearch(){
         // name.innerText = data.results[0].title
         image.src = data.results[0].image
     })
-    // 06f48698c5ec48b6ab0083ab6526e794
+   
 }
 
 
@@ -48,3 +48,11 @@ const options = {
 };
 
 //https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&
+
+
+
+
+
+
+ // 06f48698c5ec48b6ab0083ab6526e794 ---> luis api key for spoontaciular
+//  d88c1672269546ba8bb8c72a0ff5ee7f ---> ayaiz api key for spoontaciular
