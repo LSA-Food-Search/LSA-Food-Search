@@ -1,0 +1,13 @@
+header{
+    display:flex;
+    justify-content:center;
+    
+}
+
+#cardsection{
+    display: flex;
+    justify-content: center;
+    /* margin: auto; */
+    /* margin-right: 30px; */
+    justify-content: space-evenly;
+}
