@@ -185,8 +185,7 @@ function addcardss(number) {
 		let cardsection = document.getElementById('cardsection')
 		let div = document.createElement('div');
 		div.className = `card`
-		div.style.width = '20%'
-		div.style.height = '50%'
+		div.style.height = '70%'
 		div.style.property = 'width: 18rem;'
 		let img = document.createElement('img')
 		img.id = `cardimg${i}`
@@ -198,20 +197,43 @@ function addcardss(number) {
 		let divbody = document.createElement('div')
 		divbody.className = 'card-body'
 		let title = document.createElement('h5')
+		let br = document.createElement('br')
 		title.id = `card-title${i}`
 		title.innerHTML = 'placeHolder'
 		title.className = 'card-title'
 		let button = document.createElement('a')
 		button.href = '#'
 		button.innerHTML = 'See How To Make'
+		button.setAttribute('data-bs-toggle', 'modal')
+		button.setAttribute('data-bs-target','#exampleModal')
 		button.className = 'btn btn-primary'
 		divbody.appendChild(title)
+		divbody.appendChild(br)
 		divbody.appendChild(button)
 		div.appendChild(img)
 		div.appendChild(divbody)
 		cardsection.appendChild(div)
 	}
 }
+
+
+	// <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ //       <div class="modal-dialog">
+ //       <div class="modal-content">
+ //       <div class="modal-header">
+ //         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+ //         <button type="button" id=""  data-bs-dismiss="modal" aria-label="Close"></button>
+ //       </div>
+ //       <div class="modal-body">
+ //         //...
+ //       </div>
+ //       <div class="modal-footer">
+ //         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+ //         <button type="button" class="btn btn-primary">Save changes</button>
+ //        </div>
+ //       </div>
+ //       </div>
+ //   </div>
 const optionss = {
 	method: 'GET',
 	headers: {
