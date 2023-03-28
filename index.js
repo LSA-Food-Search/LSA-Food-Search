@@ -1,14 +1,13 @@
 
-let instructionBtn= document.getElementById("instructionBtn")
-instructionBtn.addEventListener("click", popModal);
+// let instructionBtn= document.getElementById("instructionBtn")
+// instructionBtn.addEventListener("click", popModal);
 
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+// const myModal = document.getElementById('myModal')
+// const myInput = document.getElementById('myInput')
 
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
-
+// myModal.addEventListener('shown.bs.modal',
+//   myInput.focus()
+// )
 
 
 // // let modalButton= document.getElementById("modal-Button");
