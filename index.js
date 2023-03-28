@@ -29,142 +29,20 @@
 //     })
    
 // }
+//  // 06f48698c5ec48b6ab0083ab6526e794 ---> luis api key for spoontaciular
+// //  d88c1672269546ba8bb8c72a0ff5ee7f ---> ayaiz api key for spoontaciular
 
-
-
-
-
-// let submit = document.getElementById('ingrediantbutton');
-// submit.addEventListener('click', consolelog)
-
-// function consolelog(e){
-//     e.preventDefault()
-//     let ingrediant_input = document.getElementById('ingrediantinput').value.split(',').join('%2C%20')
-//     fetch(`https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${ingrediant_input}`, options)
-// 	.then(response => response.json())
-// 	.then(response => {
-// 		console.log(response)
-// 		let cardname = document.getElementById('card-title')
-// 		let cardimg = document.getElementById('cardimg')
-// 		cardname.innerHTML = response.results[0].name
-// 		cardimg.src = response.results[0].thumbnail_url
-
-// 	})
-// 	.catch(err => console.error(err));
-// }
-
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': 'caf33a1dafmsh08a1abe9bf7a701p1eb6eajsn8d58f2496da1',
-// 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-// 	}
-// };
-
-//https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&
-
-
-
-
-
-
- // 06f48698c5ec48b6ab0083ab6526e794 ---> luis api key for spoontaciular
-//  d88c1672269546ba8bb8c72a0ff5ee7f ---> ayaiz api key for spoontaciular
-
-
-
-// function addCard(){
-// let cardContainer = document.getElementById("card-container")
-// let card = document.createElement("div")
-// card.classList.add("card")
-// let img = document.createElement('img')
-// 	img.id = 'cardimg'
-// 	img.src = '...'
-//     img.className = 'card-img-top'
-// img.alt = "..."
-// let cardBody = document.createElement("div")
-// cardBody.classList.add("card-body")
-// let cardTitle = document.createElement("h5")
-// cardTitle.classList.add("card-title")
-// cardTitle.textContent = "Card title"
-// let cardText = document.createElement("p")
-// cardText.classList.add("card-text")
-// cardText.textContent = "random text"
-// let cardFooter = document.createElement("div")
-// cardFooter.classList.add("card-footer")
-// let cardFooterLink = document.createElement("a")
-// cardFooterLink.classList.add("btn", "btn-primary")
-// cardFooterLink.href = "#"
-// cardFooterLink.textContent = "Go somewhere"
-// // div.appendChild(img)
-// cardBody.appendChild(cardTitle)
-// cardBody.appendChild(cardText)
-// cardFooter.appendChild(cardFooterLink)
-// card.appendChild(cardBody)
-// card.appendChild(cardFooter)
-// cardContainer.appendChild(card)}
- 
-
-// addCard()
-
-
-
-
-
-
-
-
-
-
-// function addcards(){
-// 	let cardsection = document.getElementById('cardsection')
-// 	let div = document.createElement('div');
-// 	div.className = 'card'
-// 	div.style.property = 'width: 18rem;'
-//     div.style.width = 200
-//     div.style.height = 300
-// 	let img = document.createElement('img')
-// 	img.id = 'cardimg'
-// 	img.src = '...'
-// 	img.className = 'card-img-top'
-// 	img.alt = "..."
-// 	let divbody = document.createElement('div')
-// 	divbody.className = 'card-body'
-// 	let title = document.createElement('h5')
-// 	title.id = 'card-title'
-// 	title.innerHTML = 'placeHolder'
-// 	title.className = 'card-title'
-// 	let button = document.createElement('a')
-// 	button.href='#'
-// 	button.innerHTML = 'See How To Make'
-//     button.id = 'howTo'
-// 	button.className = 'btn btn-primary'
-// 	divbody.appendChild(title)
-// 	divbody.appendChild(button)
-// 	div.appendChild(img)
-// 	div.appendChild(divbody)
-// 	cardsection.appendChild(div)
-
-// }
-
-// // addcards()
-
-
-
-
-
-
-
-
-
-
-	// 06f48698c5ec48b6ab0083ab6526e794
 
 let submitt = document.getElementById('ingrediantbutton');
 submitt.addEventListener('click', addcontent)
 function addcontent(e) {
 	e.preventDefault()
-	let length = 5;
+	let length = 8;
+	let target = document.getElementById('cardsection').children;
+	if(target.length > 0){
+		console.log(target)
+		document.getElementById('cardsection').innerHTML = ''
+	}
 	addcardss(length)
 	let ingrediant_input = document.getElementById('ingrediantinput').value.split(',').join('%2C%20')
 	fetch(`https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${ingrediant_input}`, optionss)
@@ -172,12 +50,17 @@ function addcontent(e) {
 	.then(data => {
 		console.log(data)
 		for(let i=0; i<length;i++){
+			let button = document.getElementById(`holder${i}`)
 			let card = document.getElementById(`cardimg${i}`)
 			let text = document.getElementById(`card-title${i}`)
 			card.src = data.results[i].thumbnail_url
 			text.innerHTML = data.results[i].name
+			button.id = data.results[i].name
 		}
 	})
+	
+	
+	
 	// .catch(err => console.error(err));
 }
 function addcardss(number) {
@@ -186,7 +69,7 @@ function addcardss(number) {
 		let div = document.createElement('div');
 		div.className = `card`
 		div.style.height = '70%'
-		div.style.property = 'width: 18rem;'
+		// div.style.property = 'width: 18rem;'
 		let img = document.createElement('img')
 		img.id = `cardimg${i}`
 		img.src = '...'
@@ -202,6 +85,7 @@ function addcardss(number) {
 		title.innerHTML = 'placeHolder'
 		title.className = 'card-title'
 		let button = document.createElement('a')
+		button.id += `holder${i}`
 		button.href = '#'
 		button.innerHTML = 'See How To Make'
 		button.setAttribute('data-bs-toggle', 'modal')
@@ -217,36 +101,11 @@ function addcardss(number) {
 }
 
 
-	// <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- //       <div class="modal-dialog">
- //       <div class="modal-content">
- //       <div class="modal-header">
- //         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
- //         <button type="button" id=""  data-bs-dismiss="modal" aria-label="Close"></button>
- //       </div>
- //       <div class="modal-body">
- //         //...
- //       </div>
- //       <div class="modal-footer">
- //         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
- //         <button type="button" class="btn btn-primary">Save changes</button>
- //        </div>
- //       </div>
- //       </div>
- //   </div>
-// const optionss = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': 'caf33a1dafmsh08a1abe9bf7a701p1eb6eajsn8d58f2496da1',
-// 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-// 	}
-// };
+const optionss = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'caf33a1dafmsh08a1abe9bf7a701p1eb6eajsn8d58f2496da1',
+		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+	}
+};
 //https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&
-
-/* if user clicks on See How to Make button then image and instructions pop 
-*/
-let cardTarget = document.getElementById('cardsection');
-cardTarget.addEventListener( 'click', (e)=> {
-  console.log(e.target)
-})
-
