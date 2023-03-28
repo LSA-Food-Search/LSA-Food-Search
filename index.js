@@ -148,3 +148,75 @@ function addcards(){
 }
 
 // addcards()
+
+
+
+
+
+
+
+
+
+
+	// 06f48698c5ec48b6ab0083ab6526e794
+
+let submitt = document.getElementById('ingrediantbutton');
+submitt.addEventListener('click', addcontent)
+function addcontent(e) {
+	e.preventDefault()
+	let length = 5;
+	addcardss(length)
+	let ingrediant_input = document.getElementById('ingrediantinput').value.split(',').join('%2C%20')
+	fetch(`https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${ingrediant_input}`, optionss)
+	.then(response => response.json())
+	.then(data => {
+		console.log(data)
+		for(let i=0; i<length;i++){
+			let card = document.getElementById(`cardimg${i}`)
+			let text = document.getElementById(`card-title${i}`)
+			card.src = data.results[i].thumbnail_url
+			text.innerHTML = data.results[i].name
+		}
+	})
+	// .catch(err => console.error(err));
+}
+function addcardss(number) {
+	for (let i = 0; i < number; i++) {
+		let cardsection = document.getElementById('cardsection')
+		let div = document.createElement('div');
+		div.className = `card`
+		div.style.width = '20%'
+		div.style.height = '50%'
+		div.style.property = 'width: 18rem;'
+		let img = document.createElement('img')
+		img.id = `cardimg${i}`
+		img.src = '...'
+		img.style.width = '100%'
+		img.style.height = '50%'
+		img.className = 'card-img-top'
+		img.alt = "..."
+		let divbody = document.createElement('div')
+		divbody.className = 'card-body'
+		let title = document.createElement('h5')
+		title.id = `card-title${i}`
+		title.innerHTML = 'placeHolder'
+		title.className = 'card-title'
+		let button = document.createElement('a')
+		button.href = '#'
+		button.innerHTML = 'See How To Make'
+		button.className = 'btn btn-primary'
+		divbody.appendChild(title)
+		divbody.appendChild(button)
+		div.appendChild(img)
+		div.appendChild(divbody)
+		cardsection.appendChild(div)
+	}
+}
+const optionss = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'caf33a1dafmsh08a1abe9bf7a701p1eb6eajsn8d58f2496da1',
+		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+	}
+};
+//https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&
