@@ -51,6 +51,13 @@ function addcontent(e) {
 	.then(data => {
 		console.log(data)
 		for(let i=0; i<length;i++){
+      // let name = data.results[i].name.split('')
+      // console.log(name)
+      // if(is){
+      //   length ++
+      //   console.log('TEST')
+      //   return
+      // }
 			let button = document.getElementById(`holder${i}`)
 			let card = document.getElementById(`cardimg${i}`)
 			let text = document.getElementById(`card-title${i}`)

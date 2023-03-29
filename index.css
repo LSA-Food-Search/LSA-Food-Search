@@ -1,8 +1,13 @@
+
+
+
+
 header{
     display:flex;
     justify-content:center;
-    
+
 }
+
 #cardsection{
     display: grid;
     margin-top: 20px;
@@ -10,4 +15,30 @@ header{
     grid-template-rows: auto;
     justify-content: center;
     justify-content: space-evenly;
+}
+
+p,h3,form{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+#ulbody{
+    display: flex;
+    flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    padding-left: 10%;
+    background-color:rgb(62, 139, 222)
+  
+
+
+}
+
+#modalimg{
+    display: flex;
+    padding-left: 20%;
+    width: 76%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
 }
