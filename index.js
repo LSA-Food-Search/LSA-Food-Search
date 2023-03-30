@@ -2,7 +2,8 @@ document.getElementById('foodSearchButton').addEventListener('click', foodSearch
 
 
 
-function foodSearch(){
+function foodSearch(e){
+	// e.preventDefault();
 	let length = 9;
 	let target = document.getElementById('card-container').children;
 	let cardsection = document.getElementById('cardsection')
@@ -171,6 +172,10 @@ let cardTarget = document.getElementById('cardsection');
 cardTarget.addEventListener('click', helperFunction);
 
 function helperFunction(e){
+	let title = document.getElementById('ingredtitle')
+	title.innerHTML = ''
+	let content = document.getElementById("ingul")
+	content.innerHTML =''
   let ulchildren = document.getElementById("ulbody").children
   if(ulchildren.length > 0){
     let content = document.getElementById("ulbody")
@@ -197,16 +202,22 @@ let cardspace = document.getElementById('card-container');
 cardspace.addEventListener('click', helperFunction2);
 
 function helperFunction2(e){
+	let title = document.getElementById('ingredtitle')
+	title.innerHTML = 'Ingredients:'
   let ulchildren = document.getElementById("ulbody").children
   if(ulchildren.length > 0){
     let content = document.getElementById("ulbody")
     content.innerHTML = ''
   }
 let cardId = e.target.id.split(' ')
-console.log(cardId)
 fetch(`https://api.spoonacular.com/recipes/${cardId[0]}/information?apiKey=06f48698c5ec48b6ab0083ab6526e794&includeNutrition=false`)
 .then(res => res.json())
 .then(data => {
+	let seconul = document.getElementById('ingul').children
+	if(seconul.length > 0){
+		let content = document.getElementById("ingul")
+    content.innerHTML = ''
+	}
   console.log(data)
   let img = document.getElementById('modalimg');
   img.src = data.image
@@ -214,6 +225,12 @@ fetch(`https://api.spoonacular.com/recipes/${cardId[0]}/information?apiKey=06f48
   let li = document.createElement('li')
   li.innerHTML = data.instructions
   let content = document.getElementById("ulbody")
+  let ingul = document.getElementById('ingul')
   content.appendChild(li)
+  for(let i =0;i< data.extendedIngredients.length;i++){
+  	let ingul2 = document.createElement('li')
+  	ingul2.innerHTML = data.extendedIngredients[i].name
+  	ingul.appendChild(ingul2)
+  }
 })
   }

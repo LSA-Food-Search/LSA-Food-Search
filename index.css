@@ -1,3 +1,7 @@
+body{
+    width: 100%;
+    length:100%
+}
 header{
     display:grid;
     align-items:center;
@@ -31,6 +35,7 @@ p,h3,form{
     align-items: center;
     margin-bottom: 3%;
     margin-top: 3%;
+    font-family: "Times New Roman", Times, serif;
 }
 #card-container{
     display: grid;
@@ -51,4 +56,24 @@ p,h3,form{
     background-color: pink;
     color: black;
     opacity: 0.8;
+}
+#ulbody,#ingul,ul,#ingbody,#modal-footer,#modal-dialog{
+    display: flex;
+    flex-direction:column;
+    font-family: "Times New Roman", Times, serif;
+    padding-left: 10%;
+    background-color:#f3aeb6
+}
+li{
+background-position: 100% .4em;
+padding-right: .6em;
+margin: 1em 0;
+}
+#modalimg{
+    display: flex;
+    width: fit;
+    height: fit;
+}
+#tete{
+    font-family: "Times New Roman", Times, serif;
 }
