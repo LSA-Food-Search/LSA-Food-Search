@@ -75,44 +75,88 @@ function addcontent(e) {
 	
 	// .catch(err => console.error(err));
 }
+
 function addcardss(number) {
-	for (let i = 0; i < number; i++) {
-		let cardsection = document.getElementById('cardsection')
-		let div = document.createElement('div');
-		div.className = `card`
-		div.style.marginTop = '5%';
-		div.style.marginBottom = '5%';
-		// div.style.property = 'width: 18rem;'
-		let img = document.createElement('img')
-		img.id = `cardimg${i}`
-		img.src = '...'
-		img.style.objectFit = 'cover';
-		img.style.maxHeight = '200px';
-		img.style.width = '100%';
-		img.className = 'card-img-top'
-		img.alt = "..."
-		let divbody = document.createElement('div')
-		divbody.className = 'card-body'
-		let title = document.createElement('h5')
-		let br = document.createElement('br')
-		title.id = `card-title${i}`
-		title.innerHTML = 'placeHolder'
-		title.className = 'card-title'
-		let button = document.createElement('a')
-		button.id += `holder${i}`
-		button.href = '#'
-		button.innerHTML = 'See How To Make'
-		button.setAttribute('data-bs-toggle', 'modal')
-		button.setAttribute('data-bs-target','#exampleModal')
-		button.className = 'btn btn-primary'
-		divbody.appendChild(title)
-		divbody.appendChild(br)
-		divbody.appendChild(button)
-		div.appendChild(img)
-		div.appendChild(divbody)
-		cardsection.appendChild(div)
-	}
-}
+    let cardsection = document.getElementById('cardsection');
+    let row = document.createElement('div');
+    row.className = 'row flex-row flex-nowrap';
+    row.style.overflowX = 'auto';
+    for (let i = 0; i < number; i++) {
+      let col = document.createElement('div');
+      col.className = 'col-3';
+      let card = document.createElement('div');
+      card.className = 'card';
+      card.style.height = '70%';
+      let img = document.createElement('img');
+      img.id = `cardimg${i}`;
+      img.src = '...';
+      img.style.width = '100%';
+      img.style.height = '50%';
+      img.className = 'card-img-top';
+      img.alt = '...';
+      let divbody = document.createElement('div');
+      divbody.className = 'card-body';
+      let title = document.createElement('h5');
+      let br = document.createElement('br');
+      title.id = `card-title${i}`;
+      title.innerHTML = 'placeHolder';
+      title.className = 'card-title';
+      let button = document.createElement('a');
+      button.id += `holder${i}`;
+      button.href = '#';
+      button.innerHTML = 'See How To Make';
+      button.setAttribute('data-bs-toggle', 'modal');
+      button.setAttribute('data-bs-target','#exampleModal');
+      button.className = 'btn btn-primary';
+      divbody.appendChild(title);
+      divbody.appendChild(br);
+      divbody.appendChild(button);
+      card.appendChild(img);
+      card.appendChild(divbody);
+      col.appendChild(card);
+      row.appendChild(col);
+    }
+    cardsection.appendChild(row);
+  }
+
+// function addcardss(number) {
+// 	for (let i = 0; i < number; i++) {
+// 		let cardsection = document.getElementById('cardsection')
+// 		let div = document.createElement('div');
+// 		div.className = `card`
+// 		div.style.marginTop = '5%';
+// 		div.style.marginBottom = '5%';
+// 		// div.style.property = 'width: 18rem;'
+// 		let img = document.createElement('img')
+// 		img.id = `cardimg${i}`
+// 		img.src = '...'
+// 		img.style.objectFit = 'cover';
+// 		img.style.maxHeight = '200px';
+// 		img.style.width = '100%';
+// 		img.className = 'card-img-top'
+// 		img.alt = "..."
+// 		let divbody = document.createElement('div')
+// 		divbody.className = 'card-body'
+// 		let title = document.createElement('h5')
+// 		let br = document.createElement('br')
+// 		title.id = `card-title${i}`
+// 		title.innerHTML = 'placeHolder'
+// 		title.className = 'card-title'
+// 		let button = document.createElement('a')
+// 		button.id += `holder${i}`
+// 		button.href = '#'
+// 		button.innerHTML = 'See How To Make'
+// 		button.setAttribute('data-bs-toggle', 'modal')
+// 		button.setAttribute('data-bs-target','#exampleModal')
+// 		button.className = 'btn btn-primary'
+// 		divbody.appendChild(title)
+// 		divbody.appendChild(br)
+// 		divbody.appendChild(button)
+// 		div.appendChild(img)
+// 		div.appendChild(divbody)
+// 		cardsection.appendChild(div)
+// 	}
+// }
 
 
 function addcards(number) {
