@@ -1,8 +1,11 @@
 header{
     display:flex;
-    height: 20%;
+    height: 10%;
     justify-content:center;
     
+}
+#logo{
+    size: inherit;
 }
 #cardsection{
     display: grid;
@@ -16,6 +19,7 @@ p,h3,form{
     display: flex;
     flex-direction:column;
     justify-content: center;
+    font-size: large;
     align-items: center;
 }
 #card-container{
@@ -25,4 +29,16 @@ p,h3,form{
     grid-template-rows: auto;
     justify-content: center;
     justify-content: space-evenly;
+}
+
+#backgroundimg {
+    background-image: url('mancookin.gif');
+    background-size: cover;
+
+}
+#mission-Statement{
+    /*background-color: red;*/
+    background-color: pink;
+    color: black;
+    opacity: 0.8;
 }

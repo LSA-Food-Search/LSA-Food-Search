@@ -5,6 +5,8 @@ document.getElementById('foodSearchButton').addEventListener('click', foodSearch
 function foodSearch(){
 	let length = 9;
 	let target = document.getElementById('card-container').children;
+	let cardsection = document.getElementById('cardsection')
+	cardsection.innerHTML = ''
 	if(target.length > 0){
 		console.log(target)
 		document.getElementById('card-container').innerHTML = ''
@@ -42,13 +44,18 @@ function addcontent(e) {
 	e.preventDefault()
 	let length = 8;
 	let target = document.getElementById('cardsection').children;
+	let cardsection = document.getElementById('card-container')
+	cardsection.innerHTML = ''
 	if(target.length > 0){
 		console.log(target)
 		document.getElementById('cardsection').innerHTML = ''
 	}
 	addcardss(length)
-	let ingrediant_input = document.getElementById('ingrediantinput').value.split(',').join('%2C%20')
-	fetch(`https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${ingrediant_input}`, optionss)
+	// let ingrediant_input = document.getElementById('ingrediantinput').value.split(',').join('%2C%20')
+	// if (ingrediant_input.length ===0 ){
+		// document.getElementById('cardsection').innerHTML = ''
+	// }
+	fetch(`https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes`, optionss)
 	.then(response => response.json())
 	.then(data => {
 		console.log(data)
@@ -72,13 +79,15 @@ function addcardss(number) {
 		let cardsection = document.getElementById('cardsection')
 		let div = document.createElement('div');
 		div.className = `card`
-		div.style.height = '70%'
+		div.style.marginTop = '5%';
+		div.style.marginBottom = '5%';
 		// div.style.property = 'width: 18rem;'
 		let img = document.createElement('img')
 		img.id = `cardimg${i}`
 		img.src = '...'
-		img.style.width = '100%'
-		img.style.height = '50%'
+		img.style.objectFit = 'cover';
+		img.style.maxHeight = '200px';
+		img.style.width = '100%';
 		img.className = 'card-img-top'
 		img.alt = "..."
 		let divbody = document.createElement('div')
@@ -110,13 +119,15 @@ function addcards(number) {
 	for (let i = 1; i < number; i++) {
 		let div = document.createElement('div');
 		div.className = `card`
-		div.style.height = '70%'
+		div.style.marginTop = '5%';
+		div.style.marginBottom = '5%';
 		// div.style.property = 'width: 18rem;'
 		let img = document.createElement('img')
 		img.id = `scardimg${i}`
 		img.src = '...'
-		img.style.width = '100%'
-		img.style.height = '50%'
+		img.style.objectFit = 'cover';
+		img.style.maxHeight = '200px';
+		img.style.width = '100%';
 		img.className = 'card-img-top'
 		img.alt = "..."
 		let divbody = document.createElement('div')
