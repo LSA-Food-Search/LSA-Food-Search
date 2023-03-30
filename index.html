@@ -33,7 +33,7 @@
             </div>
             <form id='ingrform'>
                 <p id='intro'>Press the Button To generate Trending Dish recipes!</p>
-                <button id='ingrediantbutton' type="submit" class="btn btn-outline-success">Random Recipes</button>
+                <a id='ingrediantbutton' class="btn btn-outline-success">Trending Dishes</a>
             </form>
             <form>
                 <p>Submit all the ingredients you have at hand Or Search up a dish!</p>
@@ -43,7 +43,7 @@
         </div>
     </div>
     <br>
-    <h4>Results:</h4>
+    <h4 id="ressection">Results:</h4>
     <div id="card-container">
         <!--<h4>Dish Results</h3>-->
     </div>
@@ -55,6 +55,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <img id="modalimg"></img>
+                </div>
+                <div id='ingbody'>
+                    <h3 id='ingredtitle'></h3>
+                    <ul id='ingul'></ul>
                 </div>
                 <ul id='ulbody' class="modal-body"></ul>
                 <div class="modal-footer">
