@@ -1,6 +1,24 @@
-document.getElementById('foodSearchButton').addEventListener('click', foodSearch )
+document.getElementById('foodSearchButton').addEventListener('click', fetchingIngredients)
 
-
+function fetchingIngredients() {
+    const key = 'd88c1672269546ba8bb8c72a0ff5ee7f';
+    const ingredients = ['chicken', 'pasta', 'broccoli'];
+    let all = '';
+    ingredients.forEach((e, i) => {
+      if (i === 0) all += e;
+      else all += '+' + e;
+    });
+    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${key}&ingredients=${ingredients}&number=2`;
+    console.log(url)
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data)
+    //     })
+    // const res = await fetch(url);
+    // const data = await res.json();
+    // console.log(data);
+  }
 
 function foodSearch(){
 	let length = 9;
