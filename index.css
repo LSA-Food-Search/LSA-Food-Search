@@ -1,11 +1,9 @@
 header{
-    display:flex;
-    height: 10%;
-    justify-content:center;
-    
-}
-#logo{
-    size: inherit;
+    display:grid;
+    align-items:center;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 #cardsection{
     display: grid;
@@ -15,12 +13,24 @@ header{
     justify-content: center;
     justify-content: space-evenly;
 }
+#logodiv{
+    flex-direction:column;
+    justify-content: center;
+}
+#welcome{
+    margin-top: 2%;
+}
+#foodSearchButton{
+    margin-top: 2%;
+}
 p,h3,form{
     display: flex;
     flex-direction:column;
     justify-content: center;
     font-size: large;
     align-items: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 #card-container{
     display: grid;
