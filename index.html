@@ -10,26 +10,40 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     </body>
 </head>
-<header>
-    <img src="foodSearch.png" id='logo'></img>
-</header>
 
-<body class=bg-info-subtle>
-    <div id='mission-Statement'>
-        <h3 id="tete">What are YOU hungry for?</h3>
-        <p>Look inside the fridge, see what you can come up with!</p>
-
+<body class='bg-primary-subtle'>
+    <header>
+        <!--<form id='ingrform'>-->
+        <!--    <button id='ingrediantbutton' type="submit" class="btn btn-outline-success">Random Recipes</button>-->
+        <!--</form>-->
+        <div id='logodiv'>
+        <img src="finallogo2.png" id='logo'></img>
+        </div>
+        <!--<form>-->
+        <!--    <input id="userChoice" placeholder="tomatoes,onions,etc" id='userinout' type="text" name="Dish Name" />-->
+        <!--    <button id="foodSearchButton" type="button" class="btn btn-outline-success">Search</button>-->
+        <!--</form>-->
+    </header>
+    <div id='backgroundimg'>
+        <div id='mission-Statement' class="border border-danger border border-5 rounded">
+            <div>
+                <h3 id='welcome'>What Are YOU Hungry For!</h3>
+                <p id='pepe' class='text-wrap'>Look inside the Fridge and See what you can come up with! You can choose between looking up a dish or by submitting all the ingredients you have at hand</p>
+                <p id='pepe' class='text-wrap'>Look inside the Fridge and See what you can come up with! You can choose between looking up a dish or by submitting all the ingredients you have at hand</p>
+            </div>
+            <form id='ingrform'>
+                <p id='intro'>Press the Button To generate Trending Dish recipes!</p>
+                <button id='ingrediantbutton' type="submit" class="btn btn-outline-success">Random Recipes</button>
+            </form>
+            <form>
+                <p>Submit all the ingredients you have at hand Or Search up a dish!</p>
+                <input id="userChoice" placeholder="tomatoes,onions,etc" id='userinout' type="text" name="Dish Name" />
+                <button id="foodSearchButton" type="button" class="btn btn-outline-success">Search</button>
+            </form>
+        </div>
     </div>
-    <form id='ingrform'>
-        <p>Add all the ingredients you have & find the best recipe for you!</p>
-        <input id='ingrediantinput' type="text" name="Ingrediants input" />
-        <input id='ingrediantbutton' type="submit"></input>
-    </form>
-    <form>
-        <p>Search A dish Instead!</p>
-        <input id ="userChoice" id='userinout' type="text" name="Dish Name" />
-        <button id = "foodSearchButton" type="button" class="btn btn-outline-success">Search</button>
-    </form>
+    <br>
+    <h4>Results:</h4>
     <div id="card-container">
         <!--<h4>Dish Results</h3>-->
     </div>
@@ -42,12 +56,13 @@
                 <div class="modal-header">
                     <img id="modalimg"></img>
                 </div>
-                    <ul id='ulbody' class="modal-body"></ul>
+                <ul id='ulbody' class="modal-body"></ul>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
