@@ -1,6 +1,20 @@
-document.getElementById('foodSearchButton').addEventListener('click', fetchingIngredients)
+document.getElementById('foodSearchButton').addEventListener('click', hello)
 
-function fetchingIngredients() {
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '25aa8dd4a4mshc1869ed972d8793p13b8ecjsn9254a3277ade',
+		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+	}
+};
+function hello(){
+fetch('https://tasty.p.rapidapi.com/feeds/list?size=5&timezone=%2B0700&vegetarian=false&from=0', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
+
+async function fetchingIngredients() {
     const key = 'd88c1672269546ba8bb8c72a0ff5ee7f';
     const ingredients = ['chicken', 'pasta', 'broccoli'];
     let all = '';
@@ -8,16 +22,16 @@ function fetchingIngredients() {
       if (i === 0) all += e;
       else all += '+' + e;
     });
-    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${key}&ingredients=${ingredients}&number=2`;
+    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${key}&ingredients=${all}&number=2`;
     console.log(url)
     // fetch(url)
     //     .then(res => res.json())
     //     .then(data => {
     //         console.log(data)
-    //     })
-    // const res = await fetch(url);
-    // const data = await res.json();
-    // console.log(data);
+        // })
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
   }
 
 function foodSearch(){
@@ -27,7 +41,7 @@ function foodSearch(){
 		console.log(target)
 		document.getElementById('card-container').innerHTML = ''
 	}
-	let text = document.getElementById('userChoice').value.split(" ").join(",+")
+	let text = document.getElementById('userChoice').value.split(" ").join(",")
 	if (text.length ===0 ){
 		document.getElementById('card-container').innerHTML = ''
 	}else{
