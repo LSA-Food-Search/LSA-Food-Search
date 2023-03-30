@@ -1,7 +1,7 @@
-#logodiv{
-    align-items:center;
-    justify-content:center;
-}
+/*#logodiv{*/
+/*    align-items:center;*/
+/*    justify-content:center;*/
+/*}*/
 header{
      grid-template-columns: 25% 50% 25%;
     display:grid;
@@ -38,14 +38,14 @@ p,h3,form{
     margin-top: 3%;
     font-family: "Times New Roman", Times, serif;
 }
-/*#card-container{*/
-/*    display: grid;*/
-/*    margin-top: 20px;*/
-/*    grid-template-columns: 20% 20% 20% 20%;*/
-/*    grid-template-rows: auto;*/
-/*    justify-content: center;*/
-/*    justify-content: space-evenly;*/
-/*}*/
+#card-container{
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: auto;
+    justify-content: center;
+    justify-content: space-evenly;
+}
 
 #backgroundimg {
     background-image: url('mancookin.gif');
@@ -80,6 +80,11 @@ margin: 1em 0;
 }
 
 .scrolling-wrapper{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 10%;
+}
+.row{
     overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 10%;
