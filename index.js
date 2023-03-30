@@ -77,47 +77,49 @@ function addcontent(e) {
 }
 
 function addcardss(number) {
-    let cardsection = document.getElementById('cardsection');
-    let row = document.createElement('div');
-    row.className = 'row flex-row flex-nowrap';
-    row.style.overflowX = 'auto';
-    for (let i = 0; i < number; i++) {
-      let col = document.createElement('div');
-      col.className = 'col-3';
-      let card = document.createElement('div');
-      card.className = 'card';
-      card.style.height = '70%';
-      let img = document.createElement('img');
-      img.id = `cardimg${i}`;
-      img.src = '...';
-      img.style.width = '100%';
-      img.style.height = '50%';
-      img.className = 'card-img-top';
-      img.alt = '...';
-      let divbody = document.createElement('div');
-      divbody.className = 'card-body';
-      let title = document.createElement('h5');
-      let br = document.createElement('br');
-      title.id = `card-title${i}`;
-      title.innerHTML = 'placeHolder';
-      title.className = 'card-title';
-      let button = document.createElement('a');
-      button.id += `holder${i}`;
-      button.href = '#';
-      button.innerHTML = 'See How To Make';
-      button.setAttribute('data-bs-toggle', 'modal');
-      button.setAttribute('data-bs-target','#exampleModal');
-      button.className = 'btn btn-primary';
-      divbody.appendChild(title);
-      divbody.appendChild(br);
-      divbody.appendChild(button);
-      card.appendChild(img);
-      card.appendChild(divbody);
-      col.appendChild(card);
-      row.appendChild(col);
-    }
-    cardsection.appendChild(row);
-  }
+	let cardsection = document.getElementById('cardsection');
+	let row = document.createElement('div');
+	row.className = 'row flex-row flex-nowrap';
+	row.style.overflowX = 'auto';
+	for (let i = 0; i < number; i++) {
+		let col = document.createElement('div');
+		col.className = 'col-3';
+		let card = document.createElement('div');
+		card.className = 'card';
+		card.style.marginTop = '5%';
+		card.style.marginBottom = '5%';
+		let img = document.createElement('img');
+		img.id = `cardimg${i}`;
+		img.src = '...';
+		img.style.objectFit = 'cover';
+		img.style.maxHeight = '200px';
+		img.style.width = '100%';
+		img.className = 'card-img-top';
+		img.alt = '...';
+		let divbody = document.createElement('div');
+		divbody.className = 'card-body';
+		let title = document.createElement('h5');
+		let br = document.createElement('br');
+		title.id = `card-title${i}`;
+		title.innerHTML = 'placeHolder';
+		title.className = 'card-title';
+		let button = document.createElement('a');
+		button.id += `holder${i}`;
+		button.href = '#';
+		button.innerHTML = 'See How To Make';
+		button.setAttribute('data-bs-toggle', 'modal');
+		button.setAttribute('data-bs-target', '#exampleModal');
+		button.className = 'btn btn-primary';
+		divbody.appendChild(title);
+		divbody.appendChild(br);
+		divbody.appendChild(button);
+		card.appendChild(img);
+		card.appendChild(divbody);
+		col.appendChild(card);
+		row.appendChild(col);
+	}
+	cardsection.appendChild(row);
+}
 
 // function addcardss(number) {
 // 	for (let i = 0; i < number; i++) {
@@ -170,8 +172,9 @@ function addcards(number) {
 		let img = document.createElement('img')
 		img.id = `scardimg${i}`
 		img.src = '...'
-		img.style.width = '100%'
-		img.style.height = '50%'
+		img.style.objectFit = 'cover';
+		img.style.maxHeight = '200px';
+		img.style.width = '100%';
 		img.className = 'card-img-top'
 		img.alt = "..."
 		let divbody = document.createElement('div')
@@ -203,10 +206,53 @@ function addcards(number) {
 	// cardsection.appendChild(h4)
 }
 
+// function addcards(number) {
+//     let cardsection = document.getElementById('card-container');
+//     let row = document.createElement('div');
+//     row.className = 'row flex-row flex-nowrap';
+//     row.style.overflowX = 'auto';
+//     for (let i = 0; i < number; i++) {
+//       let col = document.createElement('div');
+//       col.className = 'col-2';
+//       let card = document.createElement('div');
+//       card.className = 'card';
+//       card.style.height = '70%';
+//       let img = document.createElement('img');
+//       img.id = `cardimg${i}`;
+//       img.src = '...';
+//       img.style.width = '100%';
+//       img.style.height = '50%';
+//       img.className = 'card-img-top';
+//       img.alt = '...';
+//       let divbody = document.createElement('div');
+//       divbody.className = 'card-body';
+//       let title = document.createElement('h5');
+//       let br = document.createElement('br');
+//       title.id = `card-title${i}`;
+//       title.innerHTML = 'placeHolder';
+//       title.className = 'card-title';
+//       let button = document.createElement('a');
+//       button.id += `holder${i}`;
+//       button.href = '#';
+//       button.innerHTML = 'See How To Make';
+//       button.setAttribute('data-bs-toggle', 'modal');
+//       button.setAttribute('data-bs-target','#exampleModal');
+//       button.className = 'btn btn-primary';
+//       divbody.appendChild(title);
+//       divbody.appendChild(br);
+//       divbody.appendChild(button);
+//       card.appendChild(img);
+//       card.appendChild(divbody);
+//       col.appendChild(card);
+//       row.appendChild(col);
+//     }
+//     cardsection.appendChild(row);
+//   }
+
 const optionss = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key':  'a3d21461e9msh8468c145a590370p123b26jsn849e13d35af5',
+		'X-RapidAPI-Key':  '5ebe607674msh8f57b41a68e661dp1622e4jsn0250dac8ce95',
 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
 	}
 };
