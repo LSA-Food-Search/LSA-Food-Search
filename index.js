@@ -3,8 +3,9 @@ document.getElementById('foodSearchButton').addEventListener('click', foodSearch
 
 
 function foodSearch(e){
-	// e.preventDefault();
-	let length = 9;
+	e.preventDefault();
+	document.getElementById('ressection').innerHTML = `Results:`;
+	let length = 8;
 	let target = document.getElementById('card-container').children;
 	let cardsection = document.getElementById('cardsection')
 	cardsection.innerHTML = ''
@@ -27,6 +28,7 @@ function foodSearch(e){
 			let text = document.getElementById(`scard-title${i}`)
 			card.src = data[i].image
 			text.innerHTML = data[i].title
+			text.style.fontFamily = 'Aclonica';
 			button.id = data[i].id
 			button.id += ' spoon'
 			console.log(button.id)
@@ -43,7 +45,8 @@ let submitt = document.getElementById('ingrediantbutton');
 submitt.addEventListener('click', addcontent)
 function addcontent(e) {
 	e.preventDefault()
-	let length = 8;
+	document.getElementById('ressection').innerHTML = `Results:`;
+	let length = 20;
 	let target = document.getElementById('cardsection').children;
 	let cardsection = document.getElementById('card-container')
 	cardsection.innerHTML = ''
@@ -161,93 +164,95 @@ function addcardss(number) {
 // }
 
 
-function addcards(number) {
-	let cardsection = document.getElementById('card-container')
-	for (let i = 1; i < number; i++) {
-		let div = document.createElement('div');
-		div.className = `card`
-		div.style.marginTop = '5%';
-		div.style.marginBottom = '5%';
-		// div.style.property = 'width: 18rem;'
-		let img = document.createElement('img')
-		img.id = `scardimg${i}`
-		img.src = '...'
-		img.style.objectFit = 'cover';
-		img.style.maxHeight = '200px';
-		img.style.width = '100%';
-		img.className = 'card-img-top'
-		img.alt = "..."
-		let divbody = document.createElement('div')
-		divbody.className = 'card-body'
-		let title = document.createElement('h5')
-		let br = document.createElement('br')
-		title.id = `scard-title${i}`
-		title.innerHTML = 'placeHolder'
-		title.className = 'card-title'
-		let button = document.createElement('a')
-		button.id += `sholder${i}`
-		button.href = '#'
-		button.innerHTML = 'See How To Make'
-		button.setAttribute('data-bs-toggle', 'modal')
-		button.setAttribute('data-bs-target','#exampleModal')
-		button.className = 'btn btn-primary'
-		divbody.appendChild(title)
-		divbody.appendChild(br)
-		divbody.appendChild(button)
-		div.appendChild(img)
-		div.appendChild(divbody)
-		// let h4 = document.createElement('h4')
-		// h4.innerHTML = `${i}.`
-		// cardsection.appendChild(h4)
-		cardsection.appendChild(div)
-	}
-	// let h4 = document.createElement('h4')
-	// h4.innerHTML = 'Dish Results'
-	// cardsection.appendChild(h4)
-}
-
 // function addcards(number) {
-//     let cardsection = document.getElementById('card-container');
-//     let row = document.createElement('div');
-//     row.className = 'row flex-row flex-nowrap';
-//     row.style.overflowX = 'auto';
-//     for (let i = 0; i < number; i++) {
-//       let col = document.createElement('div');
-//       col.className = 'col-2';
-//       let card = document.createElement('div');
-//       card.className = 'card';
-//       card.style.height = '70%';
-//       let img = document.createElement('img');
-//       img.id = `cardimg${i}`;
-//       img.src = '...';
-//       img.style.width = '100%';
-//       img.style.height = '50%';
-//       img.className = 'card-img-top';
-//       img.alt = '...';
-//       let divbody = document.createElement('div');
-//       divbody.className = 'card-body';
-//       let title = document.createElement('h5');
-//       let br = document.createElement('br');
-//       title.id = `card-title${i}`;
-//       title.innerHTML = 'placeHolder';
-//       title.className = 'card-title';
-//       let button = document.createElement('a');
-//       button.id += `holder${i}`;
-//       button.href = '#';
-//       button.innerHTML = 'See How To Make';
-//       button.setAttribute('data-bs-toggle', 'modal');
-//       button.setAttribute('data-bs-target','#exampleModal');
-//       button.className = 'btn btn-primary';
-//       divbody.appendChild(title);
-//       divbody.appendChild(br);
-//       divbody.appendChild(button);
-//       card.appendChild(img);
-//       card.appendChild(divbody);
-//       col.appendChild(card);
-//       row.appendChild(col);
-//     }
-//     cardsection.appendChild(row);
-//   }
+// 	let cardsection = document.getElementById('card-container')
+// 	for (let i = 1; i < number; i++) {
+// 		let div = document.createElement('div');
+// 		div.className = `card`
+// 		div.style.marginTop = '5%';
+// 		div.style.marginBottom = '5%';
+// 		// div.style.property = 'width: 18rem;'
+// 		let img = document.createElement('img')
+// 		img.id = `scardimg${i}`
+// 		img.src = '...'
+// 		img.style.objectFit = 'cover';
+// 		img.style.maxHeight = '200px';
+// 		img.style.width = '100%';
+// 		img.className = 'card-img-top'
+// 		img.alt = "..."
+// 		let divbody = document.createElement('div')
+// 		divbody.className = 'card-body'
+// 		let title = document.createElement('h5')
+// 		let br = document.createElement('br')
+// 		title.id = `scard-title${i}`
+// 		title.innerHTML = 'placeHolder'
+// 		title.className = 'card-title'
+// 		let button = document.createElement('a')
+// 		button.id += `sholder${i}`
+// 		button.href = '#'
+// 		button.innerHTML = 'See How To Make'
+// 		button.setAttribute('data-bs-toggle', 'modal')
+// 		button.setAttribute('data-bs-target','#exampleModal')
+// 		button.className = 'btn btn-primary'
+// 		divbody.appendChild(title)
+// 		divbody.appendChild(br)
+// 		divbody.appendChild(button)
+// 		div.appendChild(img)
+// 		div.appendChild(divbody)
+// 		// let h4 = document.createElement('h4')
+// 		// h4.innerHTML = `${i}.`
+// 		// cardsection.appendChild(h4)
+// 		cardsection.appendChild(div)
+// 	}
+// 	// let h4 = document.createElement('h4')
+// 	// h4.innerHTML = 'Dish Results'
+// 	// cardsection.appendChild(h4)
+// }
+
+function addcards(number) {
+    let cardsection = document.getElementById('card-container');
+    let row = document.createElement('div');
+    row.className = 'row flex-row flex-nowrap';
+    row.style.overflowX = 'auto';
+    for (let i = 1; i < number; i++) {
+      let col = document.createElement('div');
+      col.className = 'col-2';
+      let card = document.createElement('div');
+      card.className = 'card';
+      card.style.marginTop = '5%';
+      card.style.marginBottom = '5%';
+      let img = document.createElement('img');
+      img.id = `scardimg${i}`;
+      img.src = '...';
+      img.style.objectFit = 'cover';
+      img.style.maxHeight = '200px';
+      img.style.width = '100%';
+      img.className = 'card-img-top';
+      img.alt = '...';
+      let divbody = document.createElement('div');
+      divbody.className = 'card-body';
+      let title = document.createElement('h5');
+      let br = document.createElement('br');
+      title.id = `scard-title${i}`;
+      title.innerHTML = 'placeHolder';
+      title.className = 'card-title';
+      let button = document.createElement('a');
+      button.id += `sholder${i}`;
+      button.href = '#';
+      button.innerHTML = 'See How To Make';
+      button.setAttribute('data-bs-toggle', 'modal');
+      button.setAttribute('data-bs-target','#exampleModal');
+      button.className = 'btn btn-primary';
+      divbody.appendChild(title);
+      divbody.appendChild(br);
+      divbody.appendChild(button);
+      card.appendChild(img);
+      card.appendChild(divbody);
+      col.appendChild(card);
+      row.appendChild(col);
+    }
+    cardsection.appendChild(row);
+  }
 
 const optionss = {
 	method: 'GET',
@@ -282,6 +287,7 @@ fetch(`https://tasty.p.rapidapi.com/recipes/get-more-info?id=${cardId[0]}`,optio
   for (let i = 0; i < data.instructions.length; i++ ){
     let li = document.createElement('li')
     li.innerHTML = data.instructions[i].display_text
+    li.style.fontFamily = `Aclonica`;
     let content = document.getElementById("ulbody")
     content.appendChild(li)
   }
@@ -312,13 +318,16 @@ fetch(`https://api.spoonacular.com/recipes/${cardId[0]}/information?apiKey=06f48
   img.src = data.image
   img.width = 200;
   let li = document.createElement('li')
+  li.style.fontFamily = 'Aclonica';
   li.innerHTML = data.instructions
   let content = document.getElementById("ulbody")
   let ingul = document.getElementById('ingul')
   content.appendChild(li)
   for(let i =0;i< data.extendedIngredients.length;i++){
   	let ingul2 = document.createElement('li')
+  	ingul2.style.fontFamily = 'Aclonica';
   	ingul2.innerHTML = data.extendedIngredients[i].name
+  	// ingul2.style.fontFamily = 'Aclonica';
   	ingul.appendChild(ingul2)
   }
 })
