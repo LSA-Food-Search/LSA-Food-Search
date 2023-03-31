@@ -19,8 +19,13 @@ header{
 /*    justify-content: space-evenly;*/
 /*}*/
 #logodiv{
-    flex-direction:column;
+    display: flex;
     justify-content: center;
+    align-items:center;
+}
+#logo{
+    justify-content: center;
+    align-items:center;
 }
 #welcome{
     margin-top: 2%;
@@ -32,20 +37,22 @@ p,h3,form{
     display: flex;
     flex-direction:column;
     justify-content: center;
-    font-size: large;
+    /*font-size: large;*/
     align-items: center;
     margin-bottom: 3%;
     margin-top: 3%;
-    font-family: "Times New Roman", Times, serif;
 }
-#card-container{
-    display: grid;
-    margin-top: 20px;
-    grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: auto;
-    justify-content: center;
-    justify-content: space-evenly;
+#ingredtitle,p,h3,#close{
+     font-family: 'Aclonica';
 }
+/*#card-container{*/
+/*    display: grid;*/
+/*    margin-top: 20px;*/
+/*    grid-template-columns: 20% 20% 20% 20%;*/
+/*    grid-template-rows: auto;*/
+/*    justify-content: center;*/
+/*    justify-content: space-evenly;*/
+/*}*/
 
 #backgroundimg {
     background-image: url('mancookin.gif');
