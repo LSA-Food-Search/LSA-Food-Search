@@ -1,7 +1,3 @@
-/*#logodiv{*/
-/*    align-items:center;*/
-/*    justify-content:center;*/
-/*}*/
 header{
      grid-template-columns: 25% 50% 25%;
     display:grid;
@@ -10,31 +6,29 @@ header{
     margin-bottom: 2%;
     margin-top: 2%;
 }
-/*#cardsection{*/
-/*    display: grid;*/
-/*    margin-top: 20px;*/
-/*    grid-template-columns: 20% 20% 20% 20%;*/
-/*    grid-template-rows: auto;*/
-/*    justify-content: center;*/
-/*    justify-content: space-evenly;*/
-/*}*/
+
 #logodiv{
     display: flex;
     justify-content: center;
     align-items:center;
 }
+
 #logo{
     justify-content: center;
     align-items:center;
 }
+
 #welcome{
     margin-top: 2%;
 }
+
 #foodSearchButton{
     margin-top: 2%;
 }
+
 p,h3,form{
     display: flex;
+    font-size: 1.1em;
     flex-direction:column;
     justify-content: center;
     /*font-size: large;*/
@@ -42,46 +36,43 @@ p,h3,form{
     margin-bottom: 3%;
     margin-top: 3%;
 }
-#ingredtitle,p,h3,#close{
+
+#ingredtitle,#close,#mission-Statement,.card-body,#ressection{
      font-family: 'Aclonica';
 }
-/*#card-container{*/
-/*    display: grid;*/
-/*    margin-top: 20px;*/
-/*    grid-template-columns: 20% 20% 20% 20%;*/
-/*    grid-template-rows: auto;*/
-/*    justify-content: center;*/
-/*    justify-content: space-evenly;*/
-/*}*/
 
 #backgroundimg {
     background-image: url('mancookin.gif');
     background-size: cover;
 
 }
+
 #mission-Statement{
-    /*background-color: red;*/
-    background-color: pink;
+    background-color: #FFDD83;
     color: black;
     opacity: 0.8;
 }
+
 #ulbody,#ingul,ul,#ingbody,#modal-footer,#modal-dialog{
     display: flex;
     flex-direction:column;
-    font-family: "Times New Roman", Times, serif;
+    /*font-family: "Times New Roman", Times, serif;*/
     padding-left: 10%;
-    background-color:#f3aeb6
+    background-color:#98DFD6;
 }
+
 li{
 background-position: 100% .4em;
 padding-right: .6em;
 margin: 1em 0;
 }
+
 #modalimg{
     display: flex;
     width: fit;
     height: fit;
 }
+
 #tete{
     font-family: "Times New Roman", Times, serif;
 }
@@ -91,8 +82,19 @@ margin: 1em 0;
     overflow-y: hidden;
     margin-bottom: 10%;
 }
+
 .row{
     overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 10%;
+}
+#htmlbody{
+    background-color: #00235B;
+}
+#welcome{
+    font-family: "Times New Roman", Times, serif;
+}
+
+#ressection{
+    color:white;
 }

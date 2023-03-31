@@ -4,7 +4,6 @@ document.getElementById('foodSearchButton').addEventListener('click', foodSearch
 
 function foodSearch(e){
 	e.preventDefault();
-	document.getElementById('ressection').innerHTML = `Results:`;
 	let length = 8;
 	let target = document.getElementById('card-container').children;
 	let cardsection = document.getElementById('cardsection')
@@ -17,6 +16,7 @@ function foodSearch(e){
 	if (text.length ===0 ){
 		document.getElementById('card-container').innerHTML = ''
 	}else{
+		document.getElementById('ressection').innerHTML = `Results:`;
 		addcards(length)
     fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=06f48698c5ec48b6ab0083ab6526e794&ingredients=${text}`)
 	.then(response => response.json())
@@ -283,7 +283,9 @@ fetch(`https://tasty.p.rapidapi.com/recipes/get-more-info?id=${cardId[0]}`,optio
   console.log(data)
   let img = document.getElementById('modalimg');
   img.src = data.thumbnail_url;
-  img.width = 200;
+  img.style.objectFit = 'cover';
+  img.style.maxHeight = '30em';
+  img.style.width = '100%';
   for (let i = 0; i < data.instructions.length; i++ ){
     let li = document.createElement('li')
     li.innerHTML = data.instructions[i].display_text
@@ -316,7 +318,9 @@ fetch(`https://api.spoonacular.com/recipes/${cardId[0]}/information?apiKey=06f48
   console.log(data)
   let img = document.getElementById('modalimg');
   img.src = data.image
-  img.width = 200;
+  img.style.objectFit = 'cover';
+  img.style.maxHeight = '30em';
+  img.style.width = '100%';
   let li = document.createElement('li')
   li.style.fontFamily = 'Aclonica';
   li.innerHTML = data.instructions
@@ -327,7 +331,6 @@ fetch(`https://api.spoonacular.com/recipes/${cardId[0]}/information?apiKey=06f48
   	let ingul2 = document.createElement('li')
   	ingul2.style.fontFamily = 'Aclonica';
   	ingul2.innerHTML = data.extendedIngredients[i].name
-  	// ingul2.style.fontFamily = 'Aclonica';
   	ingul.appendChild(ingul2)
   }
 })
