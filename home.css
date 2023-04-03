@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .btn {
   --bs-btn-padding-x: 0.75rem;
