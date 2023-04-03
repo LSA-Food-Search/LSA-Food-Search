@@ -26,26 +26,32 @@ header{
     margin-top: 2%;
 }
 
-p,h3,form{
+p,h2,form{
     display: flex;
+    max-width: 80%;
     font-size: 1.1em;
     flex-direction:column;
     justify-content: center;
-    /*font-size: large;*/
+    text-align:center;
     align-items: center;
     margin-bottom: 3%;
     margin-top: 3%;
 }
-
-#ingredtitle,#close,#mission-Statement,.card-body,#ressection{
-     font-family: 'Aclonica';
+#ingrediantbutton,#foodSearchButton,#userChoice{
+    margin-left: 10%
+}
+form{
+    margin-left: 5%;
+}
+p,h4,h2{
+    margin-left: 10%;
 }
 
-#backgroundimg {
-    background-image: url('mancookin.gif');
-    background-size: cover;
-
+#ingredtitle,#close,#mission-Statement,.card-body,#ressection,h4{
+     font-family: "Times New Roman", Times, serif;
+     font-weight: bold;
 }
+
 
 #mission-Statement{
     background-color: #FFDD83;
@@ -56,7 +62,6 @@ p,h3,form{
 #ulbody,#ingul,ul,#ingbody,#modal-footer,#modal-dialog{
     display: flex;
     flex-direction:column;
-    /*font-family: "Times New Roman", Times, serif;*/
     padding-left: 10%;
     background-color:#98DFD6;
 }
@@ -89,7 +94,7 @@ margin: 1em 0;
     margin-bottom: 10%;
 }
 #htmlbody{
-    background-color: #00235B;
+    background-color: #8E3200;
 }
 #welcome{
     font-family: "Times New Roman", Times, serif;
@@ -97,4 +102,12 @@ margin: 1em 0;
 
 #ressection{
     color:white;
+}
+#carouselExampleFade{
+    display: flex;
+    max-height: 60%;
+    margin: auto;
+    justify-content:center !important;
+    width: 70%;
+    margin-bottom: 2%;
 }

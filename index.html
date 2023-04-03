@@ -18,24 +18,40 @@
         <div id='logodiv'>
             <img src="finallogo.png" id='logo'></img>
         </div>
-        <!--<form>-->
-        <!--    <input id="userChoice" placeholder="tomatoes,onions,etc" id='userinout' type="text" name="Dish Name" />-->
-        <!--    <button id="foodSearchButton" type="button" class="btn btn-outline-success">Search</button>-->
-        <!--</form>-->
     </header>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="desertImg.jpeg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="buffetImg.jpeg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="fireImg.jpeg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     <div id='backgroundimg'>
-        <div id='mission-Statement' class="border border-white border border-5 rounded">
+        <div id='mission-Statement' class="border border-white border border-5 rounded-pill">
             <div>
-                <h3 id='welcome'>What Are YOU Hungry For!</h3>
-                <p id='pepe' class='text-wrap'>Look inside the Fridge and See what you can come up with! You can choose between looking up a dish or by submitting all the ingredients you have at hand</p>
-                <p id='pepe' class='text-wrap'>Look inside the Fridge and See what you can come up with! You can choose between looking up a dish or by submitting all the ingredients you have at hand</p>
+                <h2 id='welcome'>Welcome to LSA Food Search, What Are YOU Hungry For?</h2>
+                <p id='pepe'>Why order from 5-star, overpriced restaurant when you make fancy meals in very own home?   So let’s take a look inside your fridge and get cooking! Submit the ingredients you have already and see the variety of dishes we have to offer for you. Need help finding a perfect dish to make for a night-in? Use our helpful Trending recipes generator and you’ll find a meal to impress your family or friends!</p>
             </div>
             <form id='ingrform'>
-                <p id='intro'>Press the Button To generate Trending Dish recipes!</p>
+                <h4 id='intro'>Press the Button to Generate Trending Dish Recipes!</h4>
                 <a id='ingrediantbutton' class="btn btn-outline-success">Trending Dishes</a>
             </form>
             <form>
-                <p>Submit all the ingredients you have at hand Or Search up a dish!</p>
+                <h4>Submit Ingredients You Have Or Search Up a Dish!</h4>
                 <input id="userChoice" placeholder="tomatoes,onions,etc" id='userinout' type="text" name="Dish Name" />
                 <button id="foodSearchButton" type="button" class="btn btn-outline-success">Search</button>
             </form>
@@ -44,10 +60,8 @@
     <br>
     <h4 id="ressection"></h4>
     <div id="card-container">
-        <!--<h4>Dish Results</h3>-->
     </div>
     <div id="cardsection">
-        <!--<h4>Ingrediants Results</h4>-->
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
